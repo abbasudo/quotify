@@ -1,6 +1,8 @@
 from win10toast import ToastNotifier
 import requests
+
+toast = ToastNotifier()
+
 while True:
-    response = requests.get("https://zenquotes.io/api/random").json()[0]
-    toast = ToastNotifier()
-    toast.show_toast(response['a'],response['q'],duration=60)
+    response = requests.get("http://api.quotable.io/random").json()
+    toast.show_toast(response['author'],response['content'], duration=60)
