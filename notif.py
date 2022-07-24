@@ -1,8 +1,7 @@
-from win10toast import ToastNotifier
+import plyer.platforms.win.notification
+from plyer import notification
 import requests
-
-toast = ToastNotifier()
 
 while True:
     response = requests.get("http://api.quotable.io/random").json()
-    toast.show_toast(response['author'],response['content'], duration=60)
+    notification.notify(response['author'],response['content'],'qouter','icon.ico',timeout=10)
