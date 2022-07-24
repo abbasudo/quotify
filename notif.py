@@ -11,6 +11,8 @@ def motivate(icon):
     response = requests.get("http://api.quotable.io/random").json()
     icon.notify(response['content'],response['author'])
 
+exit = False
+
 def close(icon):
     global exit
     exit = True
@@ -27,7 +29,7 @@ icon = icon(
 
 icon.run_detached()
 
-while 1:
+while not exit:
     motivate(icon)
     # every 20 minutes
     sleep(60 * 20)
