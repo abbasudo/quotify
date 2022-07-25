@@ -1,3 +1,5 @@
+import os
+import sys
 import requests
 from time import sleep
 from PIL import Image
@@ -5,7 +7,17 @@ from pystray import Icon as icon, Menu as menu, MenuItem as item
 
 
 def create_image():
-    return Image.open(".\icon.ico")
+    return Image.open(resource_path("icon.ico"))
+
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
 
 def motivate(icon):
     response = requests.get("http://api.quotable.io/random").json()
