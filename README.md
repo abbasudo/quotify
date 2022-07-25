@@ -28,7 +28,7 @@ linux support is coming soon.
 
 <!-- USAGE -->
 ## Installation
-to use the app simply downlaod and run the latest exe file from realese page.<br />
+to use the app simply downlaod and run the latest exe file from [realese page](https://github.com/llabbasmkhll/quotify/releases) or from this [link](https://github.com/llabbasmkhll/quotify/releases/download/v1.0.0/quotify.exe).<br />
 you can get instant motivation or close the app f from the tray icon.<br />
 ![image](https://user-images.githubusercontent.com/86796762/180854080-83adb096-7c9c-4fdb-949b-1bb838ac6929.png)
 
